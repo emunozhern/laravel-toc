@@ -1,41 +1,46 @@
 {
-    "name": "nikolay-oskin/contents",
-    "description": "Table of contents generator Laravel package for posts, news, articles or any other text",
-    "keywords": ["laravel", "laravel-contents", "table-of-contents", "contents"],
-    "authors": [
-        {
-            "name": "Nikolay Oskin",
-            "email": "nickolayoskin@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-          "NikolayOskin\\": "src/"
-        }
-    },
-    "minimum-stability": "stable",
-    "autoload-dev": {
-        "psr-4": {
-            "NikolayOskin\\Contents\\Tests\\": "tests"
-        }
-    },
-    "require": {
-        "php": "^7.0",
-        "illuminate/support": "5.5.*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^6.4"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "NikolayOskin\\Contents\\ContentsServiceProvider"
-            ],
-            "aliases": {
-                "Contents": "NikolayOskin\\Contents\\ContentsFacade"
-            }
-        }
+  "name": "nikolay-oskin/contents",
+  "description": "Table of contents generator Laravel package for posts, news, articles or any other text",
+  "keywords": [
+    "laravel",
+    "laravel-contents",
+    "table-of-contents",
+    "contents"
+  ],
+  "authors": [
+    {
+      "name": "Nikolay Oskin",
+      "email": "nickolayoskin@gmail.com",
+      "role": "Developer"
     }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "NikolayOskin\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "autoload-dev": {
+    "psr-4": {
+      "NikolayOskin\\Contents\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "php": "^8.0.2",
+    "illuminate/support": "^7|^8|^9"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5|^9.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "NikolayOskin\\Contents\\ContentsServiceProvider"
+      ],
+      "aliases": {
+        "Contents": "NikolayOskin\\Contents\\ContentsFacade"
+      }
+    }
+  }
 }
