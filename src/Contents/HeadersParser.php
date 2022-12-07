@@ -17,7 +17,8 @@ final class HeadersParser
     public function getParsedHeaders()
     {
         $patternString = '(' . implode('|', $this->tags) . ')';
-        $pattern = "~<{$patternString}([^>]*)>([^<]*)<\/\s*\g1\s*>~i";
+        // $pattern = "~<{$patternString}([^>]*)>([^<]*)<\/\s*\g1\s*>~i";
+        $pattern = "/{$patternString}.*?>(.*?)<\/h\d>/ims";
         preg_replace_callback($pattern, [$this, 'handleMatchedTag'], $this->text);
         $this->validateHeadersStructure();
         $this->addHeaderId();
@@ -33,9 +34,9 @@ final class HeadersParser
     private function handleMatchedTag($matchedTag)
     {
         $header = [];
-        if (trim($matchedTag[3])) {
+        if (trim($matchedTag[2])) {
             $header['level'] = array_search($matchedTag[1], $this->tags);
-            $header['header'] = trim($matchedTag[3]);
+            $header['header'] = trim(strip_tags($matchedTag[2]));
             $this->parsedHeaders[] = $header;
         }
         return;
